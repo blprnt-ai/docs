@@ -1,0 +1,52 @@
+---
+title: "Technical Features"
+description: "Explore the core capabilities in blprnt.ai."
+---
+
+blprnt.ai is a text-to-product platform that turns natural language into working software. Use the features below to plan, build, and ship with confidence.
+
+## Orchestration runtime
+
+### Execution model
+
+- Tool routing enforces which operations are permitted in each state.
+- Pause, resume, or cancel queued work without losing state.
+- Tasks run as a state machine with explicit transitions for `plan`, `run`, `verify`, and `finalize`.
+
+### Reliability controls
+
+- Execution metadata records decisions, tool calls, and outcomes for auditing.
+- Timeout handling and step-level error capture provide predictable failure surfaces.
+
+## Natural language to code
+
+Generate code from natural language with tool calling and project-aware context.
+
+## Agent system
+
+- Agent specializations: Planner, Executor, Verifier, Researcher, and Designer roles.
+- Multi-agent system with subagents that run in isolated sessions.
+- Reasoning effort control that adapts reasoning depth per turn.
+
+## Prompting and context
+
+- Prompt templating assembles system prompts using personality, skills, primer, and directories.
+- Skills system to register, apply, and reference skills in sessions.
+- Project primer to inject project-level instructions into each session.
+
+## Project and session management
+
+- Create, list, rename, and delete sessions and projects.
+- History and rewind to review and restore previous states.
+- In-session planning with `todo` tracking and persistent `plan` tools.
+- Memory store with vector-searchable project and user scopes.
+
+## Performance, safety, and security
+
+- An essentially infinite context window allows for complex and long-running tasks.
+- Secure vault with stronghold-based key and license storage.
+- Sandbox security with capability-based filesystem access.
+
+## Model providers
+
+Choose from multiple LLM providers including OpenAI, Anthropic, Gemini, Grok, and many more.

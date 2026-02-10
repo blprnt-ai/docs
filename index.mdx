@@ -1,97 +1,132 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: Welcome to blprnt
+mode: wide
 ---
 
-## Setting up
+<Info>
+  blprnt is currently in beta. Please report any issues you find to support@blprnt.ai.
+</Info>
 
-Get your documentation site up and running in minutes.
+blprnt is a desktop AI workspace for your software projects. It brings your codebase, planning, and AI “agents” into one place so you can go from idea → plan → shipped without juggling ten tools and losing context.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
+If you’ve ever had an AI chat that felt smart but useless the moment it couldn’t “see” your project, blprnt is the opposite: it’s built to stay grounded in *your* repository, *your* project structure, and *your* ongoing work.
+
+---
+
+## What you can do with blprnt
+
+
+<Accordion title="Projects" icon="diagram-project">
+  ### A **Project** is your workspace for a specific repo or codebase.
+  >A Project is your home base in blprnt for a specific codebase or initiative. It’s where context lives, where access is scoped, and where the app can stay grounded.
+
+  - **Connect your project folder**: this defines the sandbox the agent can safely read from and write to while working on your project.
+  - **Add an Agent Primer**: this is the “always-on” starting context for new sessions in the project.
+    - Include things like code conventions, naming patterns, architecture notes, workflow preferences, and project goals.
+    - The better your primer, the less you have to repeat yourself every time you start fresh.
+  <Tip>
+    Agents can update the primer too. If there's ever something you want to add to the primer, you can just ask the agent to do it.
+  </Tip>
+  - **Memories are created automatically**: the agent will save key decisions, definitions, and structure as it goes.
+    - Future sessions (and subagents) can reference these memories to stay consistent and avoid re-litigating the same choices.
+    - Memories can also be user-specific preferences-e.g., “I hate the color red, use blue instead”-so the app adapts to how you like to work. These memories are stored outside of the project context and can be referenced by other projects.
+</Accordion>
+
+
+<Accordion title="Sessions" icon="bars-staggered">
+  ### A **Session** is where you collaborate with the agent on real work.
+
+  >A Session is where you actually collaborate with the AI-think of it as an ongoing working thread with memory, momentum, and the ability to produce real outcomes (not just advice).
+
+  - **Capture the conversation and the decisions**: you get a clear record of what was discussed, what was chosen, and what the agent was asked to do.
+  - **Sessions are action-oriented**: they’re designed for turning requests into results-planning work, drafting changes, and helping move tasks to completion.
+  - **Depending on what you need**, the system can switch between exploratory chat, structured planning, focused execution, or verification-style review.
+  - **When tasks can be split cleanly**, blprnt will delegate to specialized subagents and keep the output coordinated in the session.
+
+  <Note>
+    The agent can decide to either do the work itself, or delegate to a subagent.
+  </Note>
+</Accordion>
+
+
+<Accordion title="Planning" icon="brain">
+  ### Plan work with a real structure (not a pile of messages)
+
+  > A Plan is how blprnt turns “we should do X” into work you can actually track and finish. Plans are created by an agent (or a focused subagent) and include both the written plan and a checklist of todos with clear statuses, so you always know what’s next, what’s in progress, and what’s done.
+
+  - **Agents create plans so execution stays aligned**: the same system that writes the plan uses it as the source of truth while doing the work, reducing drift and forgotten steps.
+  - **Subagents can own individual todos**: blprnt can delegate specific items (e.g., “implement the UI change” or “update persistence logic”) to specialized subagents while keeping everything tracked in one place.
+  - **Plans support safe iteration**: if requirements change midstream, the agent updates the plan/todos rather than silently improvising-so you can see what changed and why.
+  - **Plans make verification natural**: todos are scoped so results can be reviewed and validated before moving on, catching mistakes early instead of at the end.
+</Accordion>
+
+<Accordion title="Subagents" icon="robot">
+  > Subagents are focused specialists blprnt can spin up to handle one part of the work while keeping everything coordinated in your session and plan.
+
+  - **Research**: read-only discovery to find where things live and how they work.
+    - Used for: locating files, tracing flows, summarizing patterns, mapping “where is X implemented?”
+    - Output: paths, key snippets, and a concise summary you can act on.
+  - **Design**: UX/UI direction and interaction guidance without writing code.
+    - Used for: layout decisions, component behavior, visual hierarchy, token/variable guidance, UI consistency.
+    - Output: a design brief you can hand to an executor (or implement yourself).
+  - **Planning**: turns a goal into a concrete plan plus a todo list with statuses.
+    - Used for: breaking down multi-step work, sequencing dependencies, defining acceptance criteria.
+    - Output: a plan you can execute safely, one todo at a time.
+  - **Execution**: implements a well-scoped todo by making actual changes.
+    - Used for: adding or modifying code, wiring features, updating configs, creating migrations, implementing components.
+    - Output: the completed change for that specific todo (kept intentionally scoped).
+  - **Verification**: reviews the work for correctness and completeness before you move on.
+    - Used for: catching mistakes, mismatched requirements, edge cases, regressions, or incomplete scope.
+    - Output: a pass/fail verdict with concrete fixes if anything is off.
+
+  <Note>
+    There is a built in loop that the primary agent will use. **Research** -> **Design** (optional) -> **Planning** -> **Execution** -> **Verification**.
+  </Note>
+  <Note>
+    The primary agent can choose to do the work itself, or if it's a complex multi-step task, it will delegate to a subagent to save it's own context for higher-level orchestration.
+  </Note>
+</Accordion>
+
+
+
+---
+
+<CardGroup>
+  <Card>
+    ## How blprnt stays grounded in your project
+
+    blprnt can combine:
+    - Your project’s folder(s)
+    - Optional project indexing (to improve code-aware search)
+    - A lightweight “primer” (project-specific rules and conventions)
+    - The current plan/spec/task context
+
+    So instead of giving generic answers, it can respond like a teammate who actually knows what repo they’re in.
+  </Card>
+  <Card>
+    ## A good first workflow
+
+    1. **Create a Project** and add your folder
+    2. Start a **Session** and describe what you want to accomplish
+    3. Ask the agent to **produce a plan**, then approve/adjust it
+    4. Let it **execute tasks one at a time**, with verification between steps
+
+    You’ll get better results (and fewer regressions) by treating work as a sequence of small, checkable tasks.
+  </Card>
+</CardGroup>
+
+---
+
+<CardGroup cols={1}>
+<Card>
+  ## Need help deciding where to start?
+
+  Tell blprnt one of these, and you’ll get a strong next step:
+  - “Explain this codebase to me at a high level.”
+  - “Help me plan feature X.”
+  - “Find where Y is implemented.”
+  - “Make a safe change to Z and verify it.”
+
+  That’s the core loop: **understand → plan → execute → verify**.
 </Card>
-
-## Make it yours
-
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+</CardGroup>

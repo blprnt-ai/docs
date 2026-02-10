@@ -1,80 +1,70 @@
 ---
-title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+title: Quickstart
+description: Get blprnt set up and complete your first small, verified piece of work in minutes.
 ---
 
-## Get started in three steps
+<Steps>
+  <Step title="Create a Project">
+    ### A Project is the workspace boundary for a codebase.
 
-Get your documentation site running locally and make your first customization.
+    - Add your project folder. This defines the sandbox the agent can safely read from and write to.
+    - (Optional) Add an <strong>Agent Primer</strong> to set default context for every new session.
+      - Use it for code conventions, naming patterns, architecture notes, workflows, product goals, and “gotchas”.
+      - Treat it like the one page you wish every new teammate read before touching the repo.
+    - blprnt will build context over time.
+      - The agent can create memories to preserve key decisions, terminology, and structure.
+      - Future sessions can reference these memories to stay consistent without you repeating yourself.
+      - Memories can include user preferences too (e.g., “avoid red, use blue instead”).
+  </Step>
 
-### Step 1: Set up your local environment
+  <Step title="Start a Session">
+    ### Sessions are where you collaborate with the agent to get real work done.
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+    - Start a new Session inside your Project.
+    - Describe what you want in a few sentences, including your constraints (scope, quality bar, and any “don’t touch” areas).
+    - If you have context that shouldn’t be forgotten, add it to the prompt or to the Agent Primer so it applies to future sessions too.
+  </Step>
 
-### Step 2: Deploy your changes
+  <Step title="Answer Clarifying Questions (If Needed)">
+    ### If the request has multiple valid interpretations, blprnt will pause and ask you targeted multiple-choice questions.
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+    - This avoids wasted work and wrong assumptions.
+    - Your answers become the basis for the plan and the acceptance criteria.
+    - If something feels missing, this is the moment to add constraints (performance, UX expectations, compatibility, timelines).
+  </Step>
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+  <Step title="Review the Plan & Todos">
+    ### Planning happens automatically: the agent will propose a plan with clear todos and acceptance criteria.
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
+    - You’ll see a written plan that describes the approach and defines what “done” means.
+    - You’ll see a list of todos with statuses so progress is visible as work happens.
+    - Review for scope and sequencing:
+      - If it’s too big, ask to split it into smaller todos.
+      - If it’s too risky, ask for safer steps (or a research-first todo).
+      - If it’s missing something, ask to add acceptance criteria before execution starts.
+  </Step>
 
-### Step 3: Go live
+  <Step title="Watch Execution & Verification">
+    ### Once you approve, the agent will move through the todos and keep the plan updated as it goes.
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
+    - The primary agent may spawn specialized subagents to handle parts of the work (research, design, execution, verification).
+    - Todos move through statuses as each unit of work is completed and checked.
+    - If verification finds an issue, the agent will loop back to fix it before continuing-so you don’t accumulate broken work.
+  </Step>
+</Steps>
 
-## Next steps
+---
 
-Now that you have your docs running, explore these key features:
+## Suggested First Task (Safe + Useful)
 
-<CardGroup cols={2}>
+If you’re not sure what to try first:
 
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
+> Read through the codebase and understand the overall architecture and flow. Then suggest a small UI improvement with a plan to implement it.
 
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
+Or if it's a brand new project, you can start with a brainstorming session to get a sense of the project and then create a plan to implement it.
 
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
+It’s the fastest way to learn the blprnt loop: plan → execute → verify.
 
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
-
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+<Tip>
+  If you're not sure what to do, just ask the agent to help you.
+</Tip>

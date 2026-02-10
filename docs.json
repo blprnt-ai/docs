@@ -1,87 +1,75 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "aspen",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0f92f7",
+    "light": "#0f92f7",
+    "dark": "#0f92f7"
+  },
+  "background": {
+    "decoration": "grid"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
             "group": "Getting started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Product",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "technical-features"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Installation",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "install/windows",
+              "install/mac-os",
+              "install/linux"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "tab": "Guides",
+        "pages": [
+          "guides/project",
+          "guides/session"
+        ]
+      },
+      {
+        "tab": "Installation",
+        "menu": [
           {
-            "group": "API documentation",
+            "item": "Windows",
             "pages": [
-              "api-reference/introduction"
+              "install/windows"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "item": "MacOS",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "install/mac-os"
+            ]
+          },
+          {
+            "item": "Linux",
+            "pages": [
+              "install/linux"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -90,33 +78,43 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Talk to us",
+        "href": "mailto:support@blprnt.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get started",
+      "href": "https://blprnt.ai"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "fonts": {
+    "family": "Space Grotesk"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "styling": {
+    "codeblocks": {
+      "theme": "synthwave-84"
+    }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/blprntai"
     }
   }
 }
