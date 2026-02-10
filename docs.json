@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "aspen",
-  "name": "Mint Starter Kit",
+  "name": "text-to-product",
   "colors": {
     "primary": "#0f92f7",
     "light": "#0f92f7",
