@@ -24,6 +24,18 @@
             ]
           },
           {
+            "group": "Working with blprnt",
+            "pages": [
+              "guides/authentication",
+              "guides/blprnt-settings",
+              "guides/projects",
+              "guides/session/create-a-session",
+              "guides/session/session-settings",
+              "guides/session/interacting-with-a-session",
+              "guides/credits"
+            ]
+          },
+          {
             "group": "Product",
             "pages": [
               "technical-features"
@@ -37,13 +49,6 @@
               "install/linux"
             ]
           }
-        ]
-      },
-      {
-        "tab": "Guides",
-        "pages": [
-          "guides/project",
-          "guides/session"
         ]
       },
       {
